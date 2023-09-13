@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <style>
+        /* 헤더 css(통일) */
+        header {
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        #h_menu {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        #h_menu>ul>li>a {
+            text-decoration: none;
+            color: #333;
+            position: relative;
+
+        }
+
+        #h_menu>ul>li {
+            text-decoration: none;
+        }
+
+        #h_menu ul li a:hover {
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        #h_menu ul li a::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 50%;
+            background-color: #333;
+            transition: all 0.3s;
+        }
+
+        #h_menu ul li a:hover::before {
+            width: 100%;
+            left: 0;
+        }
+
+        .left-menu,
+        .right-menu {
+            list-style-type: none;
+            display: flex;
+        }
+
+        .logo {
+            font-weight: bold;
+            cursor: default;
+        }
+
+        .left-menu li,
+        .right-menu li {
+            margin-right: 20px;
+        }
+
+        .left-menu li:not(.logo):hover,
+        .right-menu li:hover {
+            color: #1a1a1a;
+            cursor: pointer;
+        }
+
+        /* 카테고리 css */
+        @font-face {
+            font-family: Neuton-Regular;
+            src: url(도자기/Neuton-Regular.ttf);
+        }
+
+        body {
+            background-color: #F2F2F2;
+            font-family: Neuton-Regular;
+            color: #363637;
+        }
+
+        #logo {
+            font-size: 25px;
+        }
+
+        ul {
+            margin-left: 60px;
+        }
+
+        ul>li {
+            list-style: none;
+            display: inline-block;
+            margin-right: 50px;
+            font-size: 15px;
+
+        }
+
+
+        h1 {
+            font-weight: 400;
+            font-size: 50px;
+            margin-bottom: 20px;
+            margin-left: 100px;
+            margin-top: 0;
+        }
+
+        ol {
+            padding: 0;
+        }
+
+        ol>li {
+            list-style: none;
+            margin-bottom: 30px;
+            font-size: 20px;
+            margin-left: 100px;
+
+        }
+
+        hr {
+            width: 20%;
+            height: 2px;
+            margin-left: 100px;
+            border: 0;
+            background-color: #363637;
+
+
+        }
+
+        #index_wrap {
+            float: left;
+            margin-left: 80px;
+        }
+
+        section {
+            float: left;
+            margin-left: 350px;
+            margin-top: 23px;
+            margin-bottom: 100px;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        div {
+            float: left;
+            margin-right: 100px;
+        }
+
+        #name {
+            font-size: 20px;
+            margin-bottom: 0;
+            margin-top: 15px;
+        }
+
+        section>div>p:last-child {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: bold;
+            font-size: 13px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+
+
+        }
+
+        a {
+            text-decoration: none;
+            color: #363637;
+        }
+
+        /* a:hover {
+            text-decoration: underline;
+        } */
+
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+        /* 밑줄 늘어났다 줄었다 */
+        #index_wrap ol {
+            display: block;
+            margin-bottom: 50px;
+        }
+
+        #index_wrap ol li {
+            position: relative;
+            margin: 0 20px;
+            height: 40px;
+            /* text-align: center; */
+            line-height: 30px;
+            cursor: pointer;
+        }
+
+        #index_wrap ol li a {
+            color: #363637;
+        }
+
+        #stretch li::after {
+            position: absolute;
+            content: "";
+            display: block;
+            border-bottom: 2px solid #363637;
+            transition: width 250ms ease-in-out;
+            left: auto;
+            width: 0;
+        }
+
+        #stretch li:hover::after {
+            transition: all 0.3s;
+            width: 100%;
+        }
+        #a img{
+            /* max-width: 100%; */
+            transition: all 0.2s linear;
+        }
+        #a:hover img{
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav id="h_menu">
+            <ul class="left-menu">
+                <div class="logo">
+                    <li>CERAMIC HOUSE</li>
+                </div>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">CATALOG</a></li>
+                <li><a href="#">CLASSES</a></li>
+            </ul>
+            <ul class="right-menu">
+                <li><a href="#"><span class="material-symbols-outlined">search</span></a></li>
+                <li><a href="#"><span class="material-symbols-outlined">local_mall</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <br>
+    <h1>Category</h1>
+    <hr>
+    <br><br>
+    <nav id="index_wrap">
+        <ol id="stretch">
+            <li><a href="category.html">ALL</a></li>
+            <li><a href="TABLE WARE.html">TABLE WARE</a></li>
+            <li><a href="DRINK WARE.html">DRINK WARE</a></li>
+            <li><a href="HOME DECOR.html">HOME DECOR</a></li>
+
+        </ol>
+    </nav>
+
+    <section>
+        <div id="a">
+            <a href="datail9.html"><img src="도자기/카테고리/9.png" alt=""></a>
+            <p id="name">CERAMIC FRUIT BOWL</p>
+            <p>7$</p>
+        </div>
+        <div id="a">
+            <a href="datail7.html"><img src="도자기/카테고리/7.png" alt=""></a>
+            <p id="name">POMNA WHITE MUG</p>
+            <p>17$</p>
+        </div>
+        <div id="a">
+            <a href="datail10.html"><img src="도자기/카테고리/10.png" alt=""></a>
+            <p id="name">KITA BOWL WHITE</p>
+            <p>15$</p>
+        </div>
+   
+    </section>
+
+
+</body>
+
+</html>

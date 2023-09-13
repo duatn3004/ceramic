@@ -1,0 +1,559 @@
+/* 전체 설정 */
+@font-face {
+    font-family: Neuton;
+    src: url(도자기/Neuton-Regular.ttf);
+}
+
+body {
+    background-color: #F2F2F2;
+    color: #363637;
+    font-family: Neuton;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* 상단 메뉴 */
+header {
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+
+nav>ul>li>a {
+    text-decoration: none;
+    color: #333;
+    position: relative;
+}
+
+nav>ul>li {
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    background-color: #333;
+    transition: all 0.5s;
+}
+
+nav ul li a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+.left-menu,
+.right-menu {
+    list-style-type: none;
+    display: flex;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+    color: #363637;
+    cursor: default;
+    margin-right: 80px;
+}
+
+.left-menu>li>a {
+    margin-right: 0px;
+    font-size: 16px;
+}
+
+.left-menu li,
+.right-menu li {
+    margin-right: 20px;
+}
+
+.left-menu li:not(.logo):hover,
+.right-menu li:hover {
+    color: #1a1a1a;
+    /* text-decoration: underline; */
+    cursor: pointer;
+}
+
+.cover img {
+    width: 800px;
+    height: 800px;
+    box-sizing: border-box;
+}
+
+/* 메인 영역 */
+.header-image {
+    /* padding-left: 00px; */
+    margin-left: 800px;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text {
+    position: absolute;
+    z-index: 1;
+    left: 330px;
+    top: 300px;
+}
+
+.text h1 {
+    margin: 0;
+}
+
+button {
+    border: 1px solid #000;
+    background-color: transparent;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+}
+
+button:hover {
+    background-color: #363637;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+button span {
+    margin-left: 10px;
+}
+
+/* 컬렉션 영역 */
+.Collections {
+    padding: 20px 20px 20px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.collections-title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.shop-now {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.container {
+    animation: fadeIn 3s ease-in;
+}
+
+.main-container2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coll-img {
+    margin-top: 0px;
+    margin-left: 50px;
+}
+
+.coll-img img {
+    width: 100%;
+    height: auto;
+}
+
+.box {
+    margin-top: 0px;
+    margin-right: 150px;
+}
+
+h6 {
+    font-size: 40px;
+    font-weight: lighter;
+    margin-bottom: 50px;
+}
+
+.pp {
+    font-size: 20px;
+}
+
+.control {
+    position: absolute;
+    top: 50%;
+    left: 150px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+#leftArrow,
+#rightArrow {
+    width: 65px;
+    height: 50px;
+}
+
+.control2 {
+    position: absolute;
+    top: 50%;
+    right: 150px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.control img:hover {
+    transform: scale(1.1);
+}
+
+.control2 img:hover {
+    transform: scale(1.1);
+}
+
+.Collections>.text {
+    position: absolute;
+
+}
+
+.text {
+    left: 330px;
+}
+
+/* 원데이 클래스 영역 */
+.Onedayclass {
+    align-items: center;
+    padding: 20px 20px 20px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.Onedayclass-title {
+    position: absolute;
+    top: 20px;
+    left: 330px;
+}
+
+.main-container3 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.one-classinfo,
+.one-classinfo2 {
+    width: 45%;
+    text-align: center;
+    opacity: 1;
+    transform: translateX(50px);
+    transition: all 0.5s cubic-bezier(0.99, 1, 0.99, 1);
+}
+
+.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.asd {
+    font-size: 65px;
+}
+
+.pp {
+    margin-left: 10px;
+}
+
+.pp-box {
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.pp-box2 {
+    margin-bottom: 20px;
+}
+
+.pp-box {
+    animation-name: slideIn;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+}
+
+.pp-box2 {
+    animation-name: slideIn;
+    animation-duration: 15s;
+    animation-fill-mode: forwards;
+}
+
+.main-container3 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(250px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.classinfoimg img {
+    width: 400px;
+    height: 400px;
+    border-radius: 800px;
+}
+
+.classinfoimg2 img {
+    width: 400px;
+    height: 400px;
+    border-radius: 800px;
+}
+
+.classinfoimg2 {
+    margin-bottom: 50px;
+}
+
+.go-class {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 50px;
+}
+
+/* 사인업 영역 */
+.signup {
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signupimg p {
+    text-align: center;
+    font-size: 40px;
+}
+
+input[type="text"] {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #363637;
+    padding: 5px;
+    width: 35%;
+    float: left;
+}
+
+.signupimg button[type="button"] {
+    width: 20%;
+    float: right;
+}
+
+.signupimg input[type="text"],
+.signupimg button[type="button"] {
+    height: 50px;
+    line-height: 50px;
+}
+
+.signupimg input {
+    margin-left: 200px;
+}
+
+.signupimg button {
+    margin-right: 150px;
+    align-content: flex-end;
+}
+
+.signupimg {
+    position: relative;
+}
+
+.signupimg button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+input:focus {
+    outline: none;
+}
+
+.add-to {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+}
+
+.signupimg img {
+    border-radius: 50px;
+}
+
+
+/* 푸터 영역 */
+.footer {
+    background-color: #363637;
+    color: #f2f2f2;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer>.end>.end2 {
+    font-size: 20px;
+}
+
+.foot>.end>.zxcv {
+    font-size: 5px;
+}
+
+.footer .foot,
+.footer .foot2,
+.footer .foot3 {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 20px;
+}
+
+.footer .foot li,
+.footer .foot2 li,
+.footer .foot3 li {
+    margin-bottom: 10px;
+    list-style-type: none;
+    text-align: center;
+}
+
+.footer .foot li:first-child,
+.footer .foot2 li:first-child,
+.footer .foot3 li:first-child {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.foot p,
+.foot2 p,
+.foot3 p {
+    font-weight: bold;
+    text-align: center;
+}
+
+.container {
+
+    height: 1000px;
+}
+
+.text p {
+    font-size: 65px;
+}
+
+.text {
+    margin-top: 0;
+}
+
+.Collections {
+
+    height: 970px
+}
+
+.animate-section {
+    opacity: 0;
+    transition: opacity 5s ease;
+}
+
+.animate-section.visible {
+    opacity: 1;
+}
+
+.Onedayclass {
+    height: 1200px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 5s;
+    animation-fill-mode: both;
+}
+
+.fadeIn-one {
+    animation-delay: 1s;
+}
+
+.fadeIn-two {
+    animation-delay: 4s;
+}
+
+.fadeIn-the {
+    animation-delay: 8s;
+}
+
+.fadeIn-four {
+    animation-delay: 16s;
+}
+.scroll-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #F2F2F2;
+    color: black;
+    padding: 10px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+    border-radius: 500px;
+}
+.scroll-top-btn:hover{
+    background-color: #363637;
+}

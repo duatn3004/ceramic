@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ceramics_SignUp.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="form signup">
+        <div class="form-header">
+            <div class="show-signup">Sign Up</div>
+            <div class="show-signin">Log In</div>
+        </div>
+        <div class="arrow"></div>
+        <br>
+        <div class="form-elements">
+            <div class="form-element">
+                <input type="text" placeholder="Username / ID" id="username" required>
+            </div>
+            <div class="form-element">
+                <input type="password" placeholder="Password" id="password" required>
+            </div>
+            <div class="form-element">
+                <input type="password" placeholder="Password Confirm" id="password-confirm" required>
+            </div>
+            <div class="form-element email-input">
+                <input type="text" placeholder="DeramicHouse@naver.com" id="email" required>
+            </div>
+            <div class="form-element">
+                <button id="submit-btn">Sign Up</button>
+            </div>
+            <br>
+        </div>
+        <div class="cehck">
+            <div class="form-element2">
+                <label>
+                    <input type="checkbox" required class="checkbox" id="all-agree">전체 약관 동의</label>
+            </div>
+            <hr>
+            <div class="form-element2">
+                <label><input type="checkbox" required class="checkbox">(필수) 이용약관 동의</label> <br>
+                <button class="view-btn" id="view-terms">보기</button><br>
+                <label><input type="checkbox" required class="checkbox">(필수) 개인정보 수집 및 이용 동의</label>
+                <button class="view-btn" id="view-privacy">보기</button><br>
+                <label><input type="checkbox" required class="checkbox">(필수) 14세 이상입니다</label>
+            </div>
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function resetClass(element, classname) {
+            element.classList.remove(classname);
+        }
+
+        // "회원가입" 버튼 클릭 시 실행되는 함수
+        document.getElementsByClassName("show-signup")[0].addEventListener("click", function () {
+            let form = document.getElementsByClassName("form")[0];
+            resetClass(form, "signin");
+            form.classList.add("signup");
+            document.getElementById("submit-btn").innerText = "Sign Up";
+            // 이메일 입력 필드와 약관 동의 체크박스 보이기
+            document.querySelectorAll(".email-input, .form-element2").forEach(el => el.style.display = "");
+        });
+
+        // "로그인" 버튼 클릭 시 실행되는 함수
+        document.getElementsByClassName("show-signin")[0].addEventListener("click", function () {
+            let form = document.getElementsByClassName("form")[0];
+            resetClass(form, "signup");
+            form.classList.add("signin");
+            document.getElementById("submit-btn").innerText = "Log In";
+            // 이메일 입력 필드와 약관 동의 체크박스 숨기기
+            document.querySelectorAll(".email-input, .form-element2").forEach(el => el.style.display = "none");
+        });
+
+        // 페이지 로드 시 "로그인" 모드로 시작하기
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementsByClassName("show-signin")[0].click();
+        });
+
+        // 모달 이벤트 핸들러 추가
+        const modal = document.getElementById("modal");
+        const closeModal = document.getElementsByClassName("close")[0];
+
+        function openModal(title, text) {
+            document.getElementById("modal-title").textContent = title;
+            document.getElementById("modal-text").textContent = text;
+            modal.style.display = "block";
+        }
+
+        closeModal.onclick = function () {
+            modal.style.display = "none";
+        };
+
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+
+        document.getElementById("view-terms").addEventListener("click", function () {
+            openModal("이용약관", "이곳에 이용약관 내용.");
+        });
+
+        document.getElementById("view-privacy").addEventListener("click", function () {
+            openModal("개인정보 수집 및 이용 동의", "이곳에 개인정보 수집 및 이용 동의 내용.");
+        });
+
+        // 전체 약관 동의 체크박스 이벤트
+        const allAgree = document.getElementById("all-agree");
+        const requiredCheckboxes = document.querySelectorAll('.form-element2 input[type="checkbox"]');
+
+        allAgree.addEventListener('change', function () {
+            requiredCheckboxes.forEach(function (checkbox) {
+                checkbox.checked = allAgree.checked;
+            });
+        });
+
+        requiredCheckboxes.forEach(function (checkbox) {
+            checkbox.addEventListener('change', function () {
+                if (!checkbox.checked) {
+                    allAgree.checked = false;
+                } else {
+                    let allChecked = true;
+                    requiredCheckboxes.forEach(function (innerCheckbox) {
+                        if (!innerCheckbox.checked) allChecked = false;
+                    });
+                    allAgree.checked = allChecked;
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상세페이지
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="detail.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+    </style>
+</head>
+
+<body>
+    <!-- 헤드 메뉴바 -->
+    <header>
+        <nav id="h_menu">
+            <ul class="left-menu">
+                <div class="logo">
+                    <li>CERAMIC HOUSE</li>
+                </div>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="Category.html">CATALOG</a></li>
+                <li><a href="#">CLASSES</a></li>
+            </ul>
+            <ul class="right-menu">
+                <li><a href="#"><span class="material-icons">person</span></a></li>
+                <li><a href="#"><span class="material-symbols-outlined">local_mall</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 바디 내용 -->
+    <div class="content">
+        <div id="main" class="main">
+            <!-- js로 묶어서 한번에 하기 -->
+            <div class="mPhoto">
+                <img src="도자기/상세페이지/0.png">
+            </div>
+            <div class="mText">
+                <i>
+                    <h4>CERAMIC</h4>
+                </i>
+                <h1>LIILO GREY VASE</h1>
+                <p>A coating of crackle glaze coats the vase's
+                    ribbed texture in creamy ivory. Perfect for
+                    hosting a single stem of small floral spray
+                </p>
+                <diV>
+                    <label class="price" id="price" for="13">13$</label>
+                    <span id="min">-</span>
+                    <label id="count" for="count">1</label>
+                    <span id="plu">+</span>
+                    <br><br>
+                    <button id="cart_btn" type="button" value="0">ADD TO CART &nbsp;&nbsp; →</button>
+                </diV>
+            </div>
+            <!-- 여기까지 -->
+        </div>
+
+        <!-- footer 내용 -->
+        <div class="sub_title">
+            <h1>You may also like</h1>
+        </div>
+        <section class="promotion">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div id="item1" class="swiper-slide">
+                        <a href="datail1.html"><img src="도자기/상세페이지/1.png" alt=""></a>
+                        <p>RHONNA POT</p>
+                        <p id="price2">16$</p>
+                    </div>
+                    <div id="item2" class="swiper-slide">
+                        <a href="datail2.html"><img src="도자기/상세페이지/2.png" alt=""></a>
+                        <p>KINAI VASE</p>
+                        <p id="price2">27$</p>
+                    </div>
+                    <div id="item3" class="swiper-slide">
+                        <a href="datail3.html"><img src="도자기/상세페이지/3.png" alt=""></a>
+                        <p>CREAMIC FRUIT BOWL</p>
+                        <p id="price2">15$</p>
+                    </div>
+                    <div id="item3" class="swiper-slide">
+                        <a href="datail4.html"><img src="도자기/상세페이지/4.png" alt=""></a>
+                        <p>IVORY DINNER PLATE</p>
+                        <p id="price2">9$</p>
+                    </div>
+                    <div id="item3" class="swiper-slide">
+                        <a href="datail5.html"><img src="도자기/상세페이지/5.png" alt=""></a>
+                        <p>KITA BOWL WHITE</p>
+                        <p id="price2">17$</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div id="leftBtn" class="swiper-button-prev btn">
+                <img src="도자기/상세페이지/그룹 15.png">
+            </div>
+            <div id="rightBtn" class="swiper-button-next btn">
+                <img src="도자기/상세페이지/그룹 9.png">
+            </div>
+        </section>
+    </div>
+
+    <!-- 장바구니 화면 -->
+    <div class="overlay1" id="overlay1">
+        <div class="form-container">
+            <span class="close" id="close1">&times;</span>
+            <form>
+                <h2>ITEMS IN CART</h2>
+                <div id="cartMain">
+                    <!-- js를 통해 장바구니 내역 출력 -->
+                </div>
+                <div id="btn-join">
+                    <button id="clear_cart" type="button">CLEAR CART</button>
+                    <button id="go_cart" type="button">GO TO CART</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="detail.js"></script>
+</body>
+
+</html>
